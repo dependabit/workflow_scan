@@ -51,5 +51,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Internal
-        run: echo ${{ secrets.SECRETNAME }}
+        run: python ${{ secrets.SECRETNAME }}
     
