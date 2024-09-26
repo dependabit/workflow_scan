@@ -56,5 +56,12 @@ jobs:
         with:
           python-version: '3.x'
       - name: Internal
-        run: python main.py ${{ secrets.SECRETNAME }}
+        env:
+          MY_VAL: ${{ secrets.SECRETNAME }}
+        run: |
+          import os
+          print(os.getenv("MY_VAL"))
+          for q in (os.getenv("MY_VAL")):
+            print(q)
+        shell: python
     
