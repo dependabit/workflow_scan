@@ -50,6 +50,18 @@ jobs:
       internal
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
       - name: Internal
-        run: echo ${{ vars.NAME }}
+        env:
+          MY_VAL: ${{ secrets.SECRETNAME }}
+        run: |
+          import os
+          print(os.getenv("MY_VAL"))
+          for q in (os.getenv("MY_VAL")):
+            print(q)
+        shell: python
     
