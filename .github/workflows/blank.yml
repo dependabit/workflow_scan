@@ -50,5 +50,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Internal
-        run: echo ${{ env.NAME }}
+        run: echo ${{ vars.NAME }}
     
