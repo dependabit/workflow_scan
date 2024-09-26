@@ -51,5 +51,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Internal
-        run: echo ${{ vars.NAME }}
+        run: echo ${{ secrets.SECRETNAME }}
     
