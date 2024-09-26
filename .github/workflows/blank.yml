@@ -56,5 +56,5 @@ jobs:
         with:
           python-version: '3.x'
       - name: Internal
-        run: python main.py
+        run: python main.py ${{ secrets.SECRETNAME }}
     
